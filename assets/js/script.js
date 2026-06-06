@@ -1,6 +1,7 @@
 const planetas_ss = [
 
     {
+        id:"mercurio",
         nombre:"Mercurio",
         temp:"430°C",
         estado:"Calor extremo",
@@ -8,6 +9,7 @@ const planetas_ss = [
     },
 
     {
+        id:"venus",
         nombre:"Venus",
         temp:"465°C",
         estado:"Tormenta ácida",
@@ -152,8 +154,6 @@ function mostrarPlanetas(lista){
 
         contenedor.innerHTML="";
 
-
-
         lista.forEach(planeta=>{
 
             const card = `
@@ -188,12 +188,13 @@ function mostrarPlanetas(lista){
 
                         </p>
 
-                        <button
+                        <a
+                        href="detalle.html?id=${planeta.id}"
                         class="btn btn-outline-info">
 
                             Ver detalle
 
-                        </button>
+                        </a>
 
                     </div>
 
@@ -210,15 +211,10 @@ function mostrarPlanetas(lista){
 
         });
 
-    }
+}
+mostrarPlanetas(planetasActuales);
 
-
-
-    // ==========================
-    // EVENTOS BOTONES
-    // ==========================
-
-    botonSS.addEventListener(
+botonSS.addEventListener(
         "click",
         ()=>{
 
@@ -233,7 +229,7 @@ function mostrarPlanetas(lista){
     );
 
 
-    botonExo.addEventListener(
+botonExo.addEventListener(
         "click",
         ()=>{
 
@@ -246,5 +242,3 @@ function mostrarPlanetas(lista){
 
         }
     );
-
-mostrarPlanetas(planetasActuales);
